@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
 
 body {
-    background-color: #14233e;
+    background-color: #f8e3d2;
 }
 
 .container {
@@ -10,12 +10,22 @@ body {
     align-items: center;
     flex-direction: column;
     width: 100%;
+    height: 90vh;
+    font-size: 3vw;
+    font-family: "Sunflower", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .container svg {
     max-height: 75vh;
     max-width: 75vw;
     height: 100vh;
+    
+}
+
+.hidden {
+    display: none;
 }
 
 /* .container svg path:nth-child(even) {
@@ -31,6 +41,70 @@ body {
     transition: all 0.5s ease-in;
 }
 
+@keyframes sliceRight {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50vw);
+        opacity: 0;
+    }
+}
+
+/* Apply the animation when the button is disappearing */
+.disappear {
+    animation: sliceRight 0.5s forwards;
+    transition: ease-in;
+}
+
+/* Base button style */
+#myButton {
+    font-family: "Sunflower", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    padding: 5px 15px;
+    font-size: 3vw;
+    font-weight: bold;
+    color: rgb(117, 49, 0);
+    background-color: rgb(255, 106, 0);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 5px rgb(214, 92, 5), 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+/* Pressed effect */
+#myButton:active {
+    background-color: rgb(255, 106, 0);
+    box-shadow: 0 3px rgb(255, 106, 0), 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(3px);
+}
+
+.typewriter{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgb(255, 106, 0); ; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .10em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(255, 106, 0); }
+  }
 /* @keyframes animacion1 {
     0%{
         fill: #FFC300 ;

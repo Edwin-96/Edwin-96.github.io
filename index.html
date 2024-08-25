@@ -7,10 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Te amo Dyan</title>
     <link rel="stylesheet" href="index.css">
+
+    <script>
+        function makeDisappear() {
+            const button = document.getElementById("myButton");
+            const lovetext = document.getElementById("loveText")
+            button.classList.add("disappear");
+            setTimeout(() => {
+                lovetext.classList.remove("hidden")
+            }, 500);
+            button.addEventListener("animationend", function() {
+                button.style.display = "none";
+            });
+        }
+    </script>
+
 </head>
 
 <body>
-    Hola solo te queria decir que te amo.
+    <div class="container">
+        <div>
+            <button id="myButton" onclick="makeDisappear()">No tocar :p</button>
+            <div class="hidden typewriter" id="loveText">
+                Solo quería decirte que te amo mucho Dyan ❤️.
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
